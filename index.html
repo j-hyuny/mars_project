@@ -13,8 +13,10 @@
     <title>Mars_Project</title>
   </head>
   <body>
+    <!-- top button  -->
+    <div class="go_top"><i class="xi-angle-up"></i></div>
     <!-- header -->
-    <div class="header">
+    <div class="header active">
       <div class="container flex">
         <a href="index.html" class="logo"><img src="./images/logo.png" alt="" /></a>
         <ul class="nav flex">
@@ -148,13 +150,41 @@
     </footer>
 
     <script>
+      // 헤더 스크립트 
+      var header = $('.header')
+      var goTop = $('.go_top')
+      $(window).scroll(function(){
+        var scrollTopValue = $(document).scrollTop()
+        if(scrollTopValue > 0) {
+          header.addClass('active')
+        } else {
+          header.removeClass('active')
+        }
+
+        if(scrollTopValue > 900) {
+          goTop.fadeIn()
+        } else {
+          goTop.fadeOut()
+        }
+      })
+
+      goTop.click(function(){
+        $('html, body').animate({scrollTop: 0}, 400)
+      })
+
+      // 슬라이드 
       $('.slide_01').slick({
         dots: true,
         autoplay: true,
         autoplaySpeed: 5000,
         prevArrow: $('.prev'),
         nextArrow: $('.next')
+      })
 
+      $('.slide_02').slick({
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
       })
     </script>
   </body>

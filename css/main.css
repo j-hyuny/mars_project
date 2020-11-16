@@ -26,12 +26,27 @@ section {
   width: 92%; /*반응형*/
   margin: 0 auto;
   position: relative;
-
 }
 
 .flex {
   display: flex;
   align-items: center;
+}
+
+.go_top {
+  position: fixed; /*고정*/
+  right: 30px;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.12);
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
 }
 
 /* header  */
@@ -41,6 +56,7 @@ section {
   left: 0;
   width: 100%;
   z-index: 10;
+  transition: all 0.3s;
 }
 
 .header .container {
@@ -81,6 +97,19 @@ section {
   color: #ffff;
 }
 
+.header.active {
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header.active .nav a {
+  color: var(--primary);
+}
+
+.header.active .hamburger span {
+  background: var(--primary);
+}
+
 /* main slide  */
 .main_slide {
   position: relative;
@@ -110,8 +139,6 @@ section {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
-  
 }
 
 .slide_01 .item_01 {
@@ -130,22 +157,32 @@ section {
 }
 
 /* slick_custom */
-.slick-dots {
+.main_slide .slick-dots {
   bottom: 30px;
 }
 
-.slick-dots li {
+.main_slide .slick-dots li {
   width: 50px;
   height: 3px;
+  transition: width 0.3s;
 }
 
-.slick-dots li button {
+.main_slide .slick-dots li.slick-active {
+  width: 120px;
+}
+
+.main_slide .slick-dots li button {
   background: #fff;
   width: 100%;
   height: 100%;
   padding: 0;
+  opacity: 0.3;
 }
 
-.slick-dots li button:before {
+.main_slide .slick-dots li.slick-active button {
+  opacity: 0.8;
+}
+
+.main_slide .slick-dots li button:before {
   display: none;
 }
