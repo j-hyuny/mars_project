@@ -18,7 +18,7 @@ body {
 
 /* Global  */
 section {
-  padding: 70px;
+  padding: 70px 0;
 }
 
 .container {
@@ -36,7 +36,7 @@ section {
 .go_top {
   position: fixed; /*고정*/
   right: 30px;
-  bottom: 0;
+  bottom: 30px;
   width: 50px;
   height: 50px;
   background: #fff;
@@ -58,6 +58,10 @@ section {
   background: var(--primary);
   color: #fff;
   border-radius: 4px;
+}
+
+.btn:hover {
+  transform: scale(0.96);
 }
 
 .bg_1 {
@@ -221,6 +225,7 @@ section {
 /* main slide  */
 .main_slide {
   position: relative;
+  margin-bottom: 70px;
 }
 
 .arrow {
@@ -239,6 +244,10 @@ section {
   width: 46px;
   cursor: pointer;
   opacity: 0.5;
+}
+
+.arrow span:hover {
+  opacity: 0.9;
 }
 
 .slide_01 .item {
@@ -360,8 +369,207 @@ section {
   text-decoration: underline;
 }
 
+.card {
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
 .section_02 .cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   gap: 24px;
+}
+
+.section_02 .cards .card:nth-child(1) {
+  grid-column: span 7;
+}
+
+.section_02 .cards .card:nth-child(2) {
+  grid-column: span 5;
+}
+
+.section_02 .cards .card:nth-child(3) {
+  grid-column: span 5;
+}
+
+.section_02 .cards .card:nth-child(4) {
+  grid-column: span 7;
+}
+
+.section_02 .dimm,
+.section_03 .dimm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.section_02 .cards dl {
+  position: absolute;
+  bottom: -16px;
+  left: 30px;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.section_02 .cards dl dt {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.section_02 .cards .card:hover .dimm,
+.section_03 .cards .card:hover .dimm {
+  opacity: 1;
+}
+
+.section_02 .cards .card:hover dl {
+  bottom: 30px;
+}
+
+/* section_03 */
+.section_03 h4 {
+  color: #fff;
+  position: absolute; /*이미지 위로 배치*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s;
+}
+
+.section_03 .card i {
+  color: #fff;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  font-size: 46px;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s;
+}
+
+.section_03 .cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.section_03 .cards .card:nth-child(3),
+.section_03 .cards .card:nth-child(4) {
+  grid-column: span 2;
+}
+
+.section_03 .cards .card:hover h4 {
+  top: -10%;
+}
+
+.section_03 .cards .card:hover i {
+  top: 50%;
+}
+
+.section_03 .cards .card img {
+  transition: all 0.3s;
+}
+
+.section_03 .cards .card:hover img {
+  transform: scale(1.2);
+}
+
+/* section_04 */
+.section_04 .daum_map {
+  width: 100%;
+}
+
+/* section_05 */
+.section_05 .cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+
+.section_05 .cards .card {
+  transition: all 0.3s;
+}
+
+.section_05 .cards .card:hover {
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.6);
+  transform: scale(1.06);
+}
+
+.section_05 .cards .card:hover img {
+  opacity: 0.7;
+}
+
+.section_05 h3 i {
+  position: relative;
+  font-size: 30px;
+  margin-right: 10px;
+  top: 4px;
+}
+
+/* footer  */
+footer {
+  padding: 42px 0 52px;
+  background: #f5f5f5;
+  color: var(--gray-drak);
+  font-size: 13px;
+  margin-top: 70px;
+}
+
+.footer_nav {
+  display: flex;
+  align-items: center;
+}
+
+.footer_nav span {
+  display: block; /*밑으로 떨어지지 않음*/
+  width: 184px;
+  margin-right: 96px;
+}
+
+.footer_menu {
+  display: flex;
+}
+
+.footer_menu a {
+  display: block;
+  padding: 0 16px;
+}
+
+.footer_menu a:hover {
+  text-decoration: underline;
+}
+
+.footer_menu li:first-child a {
+  border-right: 1px solid var(--gray-mid);
+}
+
+.foot_info {
+  padding: 28px 0;
+  line-height: 2;
+}
+
+.copyright {
+  color: #a4a4a4;
+}
+
+.social {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  font-size: 20px;
+}
+
+.social a {
+  padding: 10px;
+  color: #8f8f8f;
+}
+
+.social a:hover {
+  color: var(--gray-drak);
 }
