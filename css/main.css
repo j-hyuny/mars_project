@@ -573,3 +573,38 @@ footer {
 .social a:hover {
   color: var(--gray-drak);
 }
+
+/* ======================================
+======================================
+반응형 - 미디어 쿼리
+======================================
+====================================== */
+/* max-width는 큰순서로 나열  */
+@media (max-width: 1200px) {
+  .slide_text {
+    text-align: center;
+  }
+  .slide_text h2 {
+    margin: 0 auto;
+  }
+  .slide_text p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+}
+/* @media (max-width: 992px) {
+} */
+@media (max-width: 768px) {
+  section {
+    padding: 40px 0;
+  }
+  .main_slide {
+    margin-bottom: 30px;
+  }
+  footer {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 576px) {
+}
